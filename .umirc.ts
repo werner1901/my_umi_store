@@ -28,31 +28,22 @@ export default defineConfig({
     {
       path: '/',
       component: '@/layouts/BasicLayout',
-      // routes: [
-      //   { path: '/login', component: '@/pages/home/index' },
-      //   // { path: '/login', component: '@/pages/login/index' },
-      //   // { path: '/search', component: '@/pages/search/index' },
-      //   // { path: '/product/:id', component: '@/pages/product/[id]' },
-      //   // {
-      //   //   path: '/',
-      //   //   component: '@/layouts/SecurityLayout',
-      //   //   routes: [
-      //   //     { path: '/cart', component: '@/pages/cart/index' },
-      //   //     { path: '/olist', component: '@/pages/olist/index' },
-      //   //     { path: '/user', component: '@/pages/user/index' },
-      //   //     { path: '/confirmBill', component: '@/pages/confirmBill' },
-      //   //   ],
-      //   // },
-      // ],
+      routes: [
+        { path: '/', component: '@/pages/home/index' },
+        { path: '/login', component: '@/pages/login/index' },
+        { path: '/search', component: '@/pages/search/index' },
+        { path: '/product/:id', component: '@/pages/product/[id]' },
+        {
+          path: '/',
+          component: '@/layouts/SecurityLayout',
+          routes: [
+            { path: '/cart', component: '@/pages/cart/index' },
+            { path: '/olist', component: '@/pages/olist/index' },
+            { path: '/user', component: '@/pages/user/index' },
+            { path: '/confirmBill', component: '@/pages/confirmbill' },
+          ],
+        },
+      ],
     },
-    {path:'/home',component:'@/pages/home/index'},
-    {path:'/cart',component:'@/pages/cart/index'},
-    {path:'/confirmBill',component:'@/pages/confirmbill/index'},
-    {path:'/olist',component:'@/pages/olist/index'},
-    {path:'/search',component:'@/pages/search/index'},
-    { path: '/product/:id', component: '@/pages/product/[id]' },
-    { path: '/login', component: '@/pages/login/index' },
-    { path: '/user', component: '@/pages/user/index' },
-
   ],
 });
