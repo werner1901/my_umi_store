@@ -12,14 +12,14 @@ interface BasicLayoutProps {
 const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const { children, location, dispatch, user } = props;
 
-  useEffect(() => {
-    // 获取用户基本信息
-    if (dispatch) {
-      dispatch({
-        type: 'user/fetchCurrent',
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   // 获取用户基本信息
+  //   if (dispatch) {
+  //     dispatch({
+  //       type: 'user/fetchCurrent',
+  //     });
+  //   }
+  // }, []);
 
   const { pathname } = location;
   const showBottomNav = pathname !== '/login';
