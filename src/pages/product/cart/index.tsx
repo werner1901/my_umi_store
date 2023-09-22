@@ -14,11 +14,23 @@ interface CartState {
 }
 
 const CartAndBuy: React.FC<CartState> = ({ product, dispatch }) => {
+  // const addToCart = useCallback(() => {
+  //   editCart({ id: product.id, increment: 1 }).then((res) => {
+  //     Toast.success(product.title + '已加入购物车！');
+  //   });
+  // }, [product]);
+
+
+
   const addToCart = useCallback(() => {
-    editCart({ id: product.id, increment: 1 }).then((res) => {
-      Toast.success(product.title + '已加入购物车！');
-    });
-  }, [product]);
+    dispatch({
+      type:'cart/saveCart',
+      payload:{
+        data:[{...product,count: 1, checked: false, img: product.imgs[0] }]
+      }
+    })
+    Toast.success(product.title + '已加入购物车！');
+  },[product])
 
   const goPay = useCallback(() => {
     dispatch({

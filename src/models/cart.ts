@@ -21,8 +21,9 @@ const CartModel: CartModelType = {
   },
   effects: {},
   reducers: {
-    saveCart(state, action) {
-      return { ...state, ...action.payload };
+    saveCart(state, { payload }) {
+      let newState = state?.data.concat(payload?.data)
+      return { data : newState };
     },
   },
 };
